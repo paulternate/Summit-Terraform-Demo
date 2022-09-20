@@ -1,3 +1,3 @@
 # Summit-Terraform-Demo
 
-Repository for `TEST` deployments used during Machine Identity Management Summit 2022.
+Working directory for `TEST` deployments used during Machine Identity Management Summit 2022.
