@@ -3,11 +3,11 @@ terraform {
     required_providers {
         venafi = {
             source = "Venafi/venafi"
-            version = "~> 0.15.0"
+            version = "~> 0.16.0"
         }
         docker = {
             source = "kreuzwerker/docker"
-            version = "~> 2.16.0" 
+            version = "~> 2.22.0" 
         }
     }
 }
@@ -19,7 +19,7 @@ variable "api_key" {
 }
 
 variable "deploy_target" {
-    description = "Target deployment environment. ('TEST' or 'PROD')"
+    description = "Target deployment environment."
 }
 
 /////PROVIDER
@@ -57,11 +57,12 @@ provider "docker" {
 
 resource "docker_image" "nginx" {
     name = "paulternate/ssl-nginx"
+    keep_locally = true
 }
 
 resource "docker_container" "nginx-bankapp-frontend" {
     name = "Bank-App-frontend"
-    image = docker_image.nginx.latest
+    image = docker_image.nginx.image_id
     ports {
         internal = "443"
         external = "8443"
@@ -97,7 +98,7 @@ resource "docker_container" "nginx-bankapp-frontend" {
 
 resource "docker_container" "nginx-bankapp-processing" {
     name = "Bank-App-processing"
-    image = docker_image.nginx.latest
+    image = docker_image.nginx.image_id
     ports {
         internal = "443"
         external = "8444"
@@ -132,7 +133,7 @@ resource "docker_container" "nginx-bankapp-processing" {
 
 resource "docker_container" "nginx-bankapp-the-beam" {
     name = "Bank-App-the-beam"
-    image = docker_image.nginx.latest
+    image = docker_image.nginx.image_id
     ports {
         internal = "443"
         external = "8445"
