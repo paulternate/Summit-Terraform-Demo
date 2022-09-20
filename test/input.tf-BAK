@@ -1,0 +1,33 @@
+/////////////////////////////
+///// AWS Inputs
+
+variable "instance_type" {
+  default = "t2.micro"
+}
+
+variable "zone_id" {
+    default = "Z3K9PL5CT8FNC5"
+}
+
+variable "domain" {
+    default = "indellientlabs.com"
+}
+
+/////////////////////////////
+///// Venafi inputs
+
+variable "tpp_url" {
+  description = "Venafi Trust Protection Platform URL (e.g. https://tpp.venafi.example:443/vedsdk)."
+}
+
+variable "tpp_username" {
+  description = "WebSDK account username for authentication (applies only to Venafi Platform)."
+}
+
+variable "tpp_password" {
+  description = "WebSDK account password for authentication (applies only to Venafi Platform"
+}
+
+variable "policy_folder" {
+  description = "Zone ID for Venafi Cloud or policy folder for Venafi Platform."
+}
