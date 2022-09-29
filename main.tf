@@ -31,24 +31,15 @@ provider "venafi" {
 /////VENAFI MACHINE IDENTITY
 resource "venafi_certificate" "nginx-bankapp-frontend" {
   common_name = "bankapp-frontend.venafidemo.com"
-  san_dns = [
-      "venafi-ecosystem-linux.vm.cld.sr",
-
-  ]
 }
 
 resource "venafi_certificate" "nginx-bankapp-processing" {
   common_name = "bankapp-processing.venafidemo.com"
-  san_dns = [
-      "venafi-ecosystem-linux.vm.cld.sr"
-  ]
 }
 
 resource "venafi_certificate" "nginx-bankapp-the-beam" {
   common_name = "bankapp-the-beam.venafidemo.com"
-  san_dns = [
-      "venafi-ecosystem-linux.vm.cld.sr"
-  ]
+
 }
 
 /////DOCKER
