@@ -39,7 +39,6 @@ resource "venafi_certificate" "nginx-bankapp-processing" {
 
 resource "venafi_certificate" "nginx-bankapp-the-beam" {
   common_name = "bankapp-the-beam.venafidemo.com"
-
 }
 
 /////DOCKER
