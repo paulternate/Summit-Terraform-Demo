@@ -35,9 +35,6 @@ resource "venafi_certificate" "nginx-bankapp-frontend" {
 
 resource "venafi_certificate" "nginx-bankapp-processing" {
   common_name = "bankapp-processing.venafidemo.com"
-  san_dns = [
-  "venafi-testing-REMOVE-ME-BEFORE-PROD-DEPLOY.demo"
-  ]
 }
 
 resource "venafi_certificate" "nginx-bankapp-the-beam" {
