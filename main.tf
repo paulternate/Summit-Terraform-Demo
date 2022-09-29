@@ -35,7 +35,6 @@ resource "venafi_certificate" "nginx-bankapp-frontend" {
       "venafi-ecosystem-linux.vm.cld.sr",
       "venafi-testing-REMOVE-ME-BEFORE-PROD-DEPLOY.com"
   ]
-  valid_days = 3
 }
 
 resource "venafi_certificate" "nginx-bankapp-processing" {
