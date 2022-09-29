@@ -32,7 +32,7 @@ provider "venafi" {
 resource "venafi_certificate" "nginx-bankapp-frontend" {
   common_name = "bankapp-frontend.venafidemo.com"
   san_dns = [
-      "venafi-ecosystem-linux.vm.cld.sr"
+      "venafi-ecosystem-linux.vm.cld.sr",
       "venafi-testing-REMOVE-ME-BEFORE-PROD-DEPLOY.com"
   ]
 }
